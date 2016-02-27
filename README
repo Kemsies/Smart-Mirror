@@ -1,0 +1,48 @@
+Inspired by all the DYI Projects I started my own Smart Mirror Project.
+The initial idea was to get an better understanding of Raspberry Pi 2 and
+its own OS RAspbian.
+
+Hardware
+- Display
+
+AS OS I used:
+RASPBIAN JESSIE LITE
+Minimal image based on Debian Jessie
+Version:February 2016
+Release date:2016-02-09
+Kernel version:4.1
+
+
+
+	1. Neue MicroSD Karte per Win32 Disk Imager mit Raspbian Jessie Lite betanken
+	2. Netzwerk (WLAN) konfigurieren
+	3. MicroSD vollständig allokieren
+	4. Raspbian auf den aktuellen Stand bringen
+	5. GUI installieren
+		1. Display Server => sudo apt-get install xinit
+		2. Desktop Environment => sudo apt-get install lxde-core lxterminal lxappearance
+		3. Openbox Window Manager => Bestandteil von lxde-core
+		4. Login Manager => sudo apt-get install lightdm
+
+	6. Bildschirm um 90° drehen => sudo /boot/config.txt
+	7. Webserver installieren => sudo apt-get install apache2 apache2-doc apache2-utils
+	8. Install Chromium
+		1. sudo apt-get install libnspr4-0d
+		2. sudo apt-get install libnss3-1d
+		3. sudo apt-get install libxss1
+		4. sudo apt-get install xdg-utils
+		5. Auf aktuelle Version prüfen https://launchpad.net/ubuntu/trusty/armhf/chromium-browser/
+		6. wget http://launchpadlibrarian.net/240548134/chromium-browser_48.0.2564.116-0ubuntu0.14.04.1.1111_armhf.deb
+		7. Auf aktuelle Version prüfen https://launchpad.net/ubuntu/trusty/armhf/chromium-codecs-ffmpeg-extra/
+		8. wget http://launchpadlibrarian.net/240548136/chromium-codecs-ffmpeg-extra_48.0.2564.116-0ubuntu0.14.04.1.1111_armhf.deb
+		9. Auf aktuelle Version prüfen https://launchpad.net/ubuntu/trusty/armhf/chromium-browser-l10n
+		10. wget http://launchpadlibrarian.net/240471358/chromium-browser-l10n_48.0.2564.116-0ubuntu0.14.04.1.1111_all.deb
+		11. 
+
+		12. Paket von 6. installieren => sudo dpkg -i chromium-codecs-ffmpeg-extra_48.0.2564.116-0ubuntu0.14.04.1.1111_armhf.deb
+		13. Paket von 4. installieren => sudo dpkg -i chromium-browser_48.0.2564.116-0ubuntu0.14.04.1.1111_armhf.deb
+		14. Paket von 8. installieren => sudo dpkg -i chromium-browser-l10n_48.0.2564.116-0ubuntu0.14.04.1.1111_all.deb (optional)
+
+	9. Mauszeiger entfernen => sudo apt-get install unclutter
+	10. Bildschirm Einstellungen setzen => sudo nano ~/.config/lxsession/LXDE/autostart
+
